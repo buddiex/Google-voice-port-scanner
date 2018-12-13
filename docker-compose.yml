@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "8000:8000"
+     - "24:22"
+    volumes:
+     - .:/code
+
+  redis:
+    image: "redis:alpine"
+
+  database:
+    image: "postgres:9.3.24-alpine"
+    expose:
+    - "3306"
+
+#
+#    version: '3'
+#services:
+#  web:
+#    build: .
+#    ports:
+#     - "8000:8000"
+#  redis:
+#    image: "redis:alpine"
